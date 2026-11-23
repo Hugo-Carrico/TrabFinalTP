@@ -9,8 +9,9 @@ public interface Jogo {
     void jogarTurno(Jogador jogador);
     boolean jogoAcabou();
 
-    static int criarNumeroAleatorio() {
-        return random.nextInt(1, 11);
+    // (Matheus) retorna um número aleatório entre min e max - 1
+    static int criarNumeroAleatorio(int min, int max) {
+        return random.nextInt(min, max);
     }
 
 }

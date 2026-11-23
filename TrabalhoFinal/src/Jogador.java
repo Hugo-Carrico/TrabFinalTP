@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+
 public class Jogador {
 
     protected int vitorias = 0;
     protected int derrotas = 0;
     protected String ultimoTurno = "Não";
     protected String ganhando = "Não";
-    Personagem personagem;
+    protected Personagem personagem;
+    protected ArrayList<Carta> baralho = new ArrayList<>();
 
     public int getVitorias() {
         return vitorias;
@@ -66,7 +69,6 @@ public class Jogador {
         return personagem;
     }
 
-    // (Matheus) Ainda tem que impedir mirror match
     public boolean setPersonagem(int idPersonagem) {
         switch(idPersonagem) {
             case 1: {
@@ -84,6 +86,20 @@ public class Jogador {
             default: {
                 return false;
             }
+        }
+    }
+
+    public ArrayList<Carta> getBaralho() {
+        return baralho;
+    }
+
+    public boolean setBaralho(ArrayList<Carta> baralho) {
+        if( baralho.isEmpty() == false ) {
+            this.baralho = baralho;
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
